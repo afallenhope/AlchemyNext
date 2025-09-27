@@ -697,7 +697,7 @@ LLAppViewer::LLAppViewer()
 
     // Need to do this initialization before we do anything else, since anything
     // that touches files should really go through the lldir API
-    gDirUtilp->initAppDirs("Alchemy");
+    gDirUtilp->initAppDirs("AlchemyViewer");
     //
     // IMPORTANT! Do NOT put anything that will write
     // into the log files during normal startup until AFTER
