@@ -906,7 +906,8 @@ bool LLPipeline::allocateScreenBufferInternal(U32 resX, U32 resY)
 
     if (shadow_detail > 0 || ssao || RenderDepthOfField || RlvActions::hasPostProcess())
     { //only need mRT->deferredLight for shadows OR ssao OR dof
-        if (!mRT->deferredLight.allocate(resX, resY, screenFormat)) return false;
+        bool high_precision_shadows = gSavedSettings.getBOOL("RenderShadowHighPrecision");
+        if (!mRT->deferredLight.allocate(resX, resY, high_precision_shadows ? GL_RGBA16F : GL_RGBA)) return false;
     }
     else
     {
