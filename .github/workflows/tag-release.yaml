@@ -21,8 +21,7 @@ on:
         - "Release"
       project:
         description: "Project Name (used for channel name in project builds, and tag name for all builds)"
-        default: "hippo"
-      # TODO - add an input for selecting another sha to build other than head of branch
+        required: false
 
 jobs:
   tag-release:
